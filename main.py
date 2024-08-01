@@ -26,7 +26,7 @@ def get_weather():
   url = "http://t.weather.sojson.com/api/weather/city/101040100"
   res = requests.get(url).json()
   weather = res['data']['forecast'][0]
-  return weather['high'],weather['low'],weather['notice']
+  return weather['high'],weather['low'],weather['notice'],weather['type']
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
